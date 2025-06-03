@@ -444,6 +444,26 @@ public:
         delete filteredDeque;
         return result;
     }
+
+    Stack<T>* clone() const {
+        Stack<T>* copy = new Stack<T>();
+        Stack<T>* temp = new Stack<T>();
+        
+        Stack<T>* source = const_cast<Stack<T>*>(this);
+        while (!source->isEmpty()) {
+            T item = source->Pop();
+            temp->Push(item);
+        }
+    
+        while (!temp->isEmpty()) {
+            T item = temp->Pop();
+            source->Push(item);
+            copy->Push(item);
+        }
+
+        delete temp;
+        return copy;
+    }
 };
 
 
