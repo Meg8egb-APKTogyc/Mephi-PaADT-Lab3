@@ -94,7 +94,7 @@ public:
     void printState() const {
         std::cout << "Moves: " << movesCount << std::endl;
         for (int i = 0; i < 3; i++) {
-            std::cout << "Rod " << i << ": ";
+            std::cout << "Rod " << i + 1 << ": ";
             
             Stack<Ring> tempStack;
             Stack<Ring>* original = rods[i];
